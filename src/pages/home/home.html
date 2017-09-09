@@ -7,6 +7,8 @@
 </ion-header>
 
 <ion-content padding>
+<img src="image/avatar.png" *ngIf="!image">
+<img src="{{image}}" *ngIf="image">
 <button ion-button color="secondary" round (click)=takeselfie() >
 
 <ion-icon name="share-alt"></ion-icon>
@@ -18,6 +20,5 @@ Let me take a selfie</button>
 
 <button ion-button round (click)=share()>  <ion-icon ios="ios-aperture" md="md-aperture"></ion-icon> share happiness</button>
 
-<img src="image/avatar.png" *ngIf="!image">
-<img src="{{image}}" *ngIf="image">
+
 </ion-content>

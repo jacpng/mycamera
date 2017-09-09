@@ -10,7 +10,12 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 })
 export class HomePage {
 	image: any;
-		options: CameraOptions 
+		options: CameraOptions ={
+			 quality: 100,
+  destinationType: this.camera.DestinationType.DATA_URL,
+  encodingType: this.camera.EncodingType.JPEG,
+  mediaType: this.camera.MediaType.PICTURE
+		}
 
 
   constructor(public navCtrl: NavController, private camera: Camera, private socialSharing:SocialSharing) {
@@ -23,7 +28,7 @@ takeselfie(){
  // imageData is either a base64 encoded string or a file URI
  // If it's base64:
  let base64Image = 'data:image/jpeg;base64,' + imageData;
- this.image = base64Image 
+ this.image = base64Image;
 }, (err) => {
  // Handle error
 });
